@@ -31,6 +31,20 @@ function tags_badges(arg0 : any) {
   }
 }
 
+function timestamps_display(arg0 : number, arg1 : number) {
+  const uploaded = <p><i>Uploaded {new Date(arg0*1000).toLocaleDateString("en-us")}</i></p>
+  const updated = <p><i>Updated {new Date(arg1*1000).toLocaleDateString("en-us")}</i></p>
+  if(arg1 < arg0) {
+    return (
+      <div>{uploaded}</div>
+    )
+  } else {
+    return (
+      <div>{uploaded}{updated}</div>
+    )
+  }
+}
+
 function listings_cards(arg0 : any) {
     const listing = arg0 as BlogListing
     const href = `/blog/post/${listing.post_id}/${listing.live_version_id}`
@@ -45,7 +59,7 @@ function listings_cards(arg0 : any) {
                 <p>
                   {listing.description}
                 </p>
-                <p><i>Uploaded {new Date(listing.upload_timestamp*1000).toLocaleDateString("en-us")}</i></p>
+                {timestamps_display(listing.upload_timestamp, listing.update_timestamp)}
                 <div className="card-actions justify-end">
                 <a className="btn btn-primary" href={href}>Read</a>
                 </div>
