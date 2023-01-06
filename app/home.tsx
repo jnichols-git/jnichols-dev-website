@@ -11,37 +11,40 @@ const inter = Inter({ subsets: ['latin'] })
 function aboutMe() {
   return (
     <>
-    <div>
-      <p className="py-6">Hi! I'm a cloud software engineer and consultant out of Colorado, USA. I've been writing software for about 8 years, starting with text-based adventures written in Python and working my way up to where I am today.
+    <div className="py-6">
+      <p>Hi! I'm a cloud software engineer and consultant out of Colorado, USA. I've been writing software for about 8 years, starting with text-based adventures written in Python and working my way up to where I am today.
       I'm always seeking opportunities to uplift and empower communities through software solutions--currently I've got my eye on the tech used to monitor and care for animals with specific environmental requirements.</p>
     </div>
     </>
   )
 }
 
-function aboutQualifications() {
+function aboutSkills() {
   return (
     <>
-    <div>
-      <ul className="list-disc py-6">
-        <li>Graduating with a bachelor's degree in Computer Science from the University of Colorado in May 2023. Courses include: Algorithms, Object Oriented Design, Theory of Computation, Public Speaking, Senior Capstone</li>
-        <li>Proficiency in Golang, C/C++, Python, and Agile Development</li>
-        <li>Familiarity with Kubernetes, Docker, AWS, JavaScript, TypeScript</li>
-        <li>Strong leadership and communication skills</li>
+    <div className="py-6">
+      <p className="pb-6">My experience in academics, internships, jobs, and personal work has given me a strong skillset for cloud development and consulting. Skills I'm particularly proficient in are <b className="text-accent">highlighted</b>.</p>
+      <ul className="list-disc">
+        <li>Programming Languages: <b className="text-accent">Golang, C/C++, Python</b>, JavaScript, TypeScript, Java, SQL</li>
+        <li>Development Tools: <b className="text-accent">Linux/MacOS Environments</b>, GitHub, Docker, Figma </li>
+        <li>Cloud Architecture: AWS, Kubernetes</li>
+        <li>Soft Skills: <b className="text-accent">Technical Communication, Public Speaking</b>, Leadership, Project Management</li>
       </ul>
     </div>
     </>
   )
 }
 
-function aboutFunFacts() {
+function aboutExperience() {
   return (
     <>
     <div className="py-6">
-      <p>I'm not just a software development machine. If you wanted that, you'd hire GPT. When I'm not at work or pursuing personal projects, you can also find me:</p>
+      <p className="pb-6">I've accomplished a lot in my relatively short time as an engineer:</p>
       <ul className="list-disc">
-        <li>Caring for a snake (Mars) and a gecko (Eggo), both of whom are very spoiled</li>
-        <li>On a bike ride around Boulder when the weather is nice</li>
+        <li>Graduating with a 3.5 GPA from the University of Colorado Boulder in 2023</li>
+        <li>Game Development Intern and Cloud Engineer at Virga Inc. in Denver for 1.5 years</li>
+        <li>Key contributor to <a className="text-primary hover:underline" href="https://github.com/trickstercache/trickster">Trickster</a>, a reverse proxy cache for timeseries databases sponsored by the Cloud Native Computing Foundation (CNCF)</li>
+        <li>Lead cloud engineer and communication manager for iSAT Capstone Team 22-23</li>
       </ul>
     
     </div>
@@ -52,11 +55,11 @@ function aboutFunFacts() {
 function About() {
   return KeyedContent(
     {
-      keys: ["About the Person", "Qualifications", "Fun Facts"],
+      keys: ["About the Person", "Skills", "Experience"],
       contents: [
         aboutMe(),
-        aboutQualifications(),
-        aboutFunFacts(),
+        aboutSkills(),
+        aboutExperience(),
       ],
     }
   )
@@ -66,8 +69,7 @@ export default function Home() {
 
   return (
     <>
-      <main className={styles.main}>
-      <div className="hero min-h-screen w-10/12 bg-base-100">
+      <div className="hero min-h-screen">
         <div className="hero-content flex-col lg:flex-row-reverse">
           <img src="https://placeimg.com/260/400/arch" className="max-w-sm rounded-lg shadow-2xl" />
           <div>
@@ -75,7 +77,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-      </main>
     </>
   )
 }

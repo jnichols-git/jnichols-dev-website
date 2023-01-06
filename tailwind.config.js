@@ -11,6 +11,15 @@ module.exports = {
     require("daisyui"),
   ],
   daisyui: {
-    themes: ["pastel", "night"],
+    themes: [
+      {
+        j: {
+          ...require("daisyui/src/colors/themes")["[data-theme=corporate]"],
+          "--rounded-box": "0.5rem",
+          "--rounded-badge": "0.5rem",
+          "--rounded-btn": "0.5rem"
+        }
+      }
+    ],
   },
 }

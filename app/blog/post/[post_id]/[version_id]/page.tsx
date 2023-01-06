@@ -21,8 +21,6 @@ export default async function Page(
     const processed = await remark().use(html).process(content)
     const mdhtml = processed.toString()
     return (
-        <main className={styles.main}>
             <BlogPost content={mdhtml}/>
-        </main>
     )
 }
