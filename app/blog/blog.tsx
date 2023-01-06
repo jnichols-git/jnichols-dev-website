@@ -32,7 +32,7 @@ function cardifyBlogListing(arg0 : any) {
                 <p>{listing.description}</p>
                 <p><i>Uploaded {new Date(listing.upload_timestamp*1000).toLocaleDateString("en-us")}</i></p>
                 <div className="card-actions justify-end">
-                <Link className="btn btn-primary" href={href}>Read</Link>
+                <a className="btn btn-primary" href={href}>Read</a>
                 </div>
             </div>
         </div>
