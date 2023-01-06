@@ -4,6 +4,17 @@ const nextConfig = {
     appDir: true,
   },
   reactStrictMode: true,
+  headers: () => [
+    {
+      source: '/blog',
+      headers: [
+        {
+          key: 'Cache-Control',
+          value: 'no-store'
+        }
+      ]
+    }
+  ]
 }
 
 module.exports = nextConfig
