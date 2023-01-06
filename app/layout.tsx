@@ -10,7 +10,7 @@ export default function RootLayout(
 			<body data-theme="j">
         <div className="navbar">
           <div className="flex-1">
-            <a className="btn btn-ghost normal-case text-xl">jnichols-dev.net</a>
+            <a className="btn btn-ghost normal-case text-xl">jnichols-dev.com</a>
           </div>
           <div className="flex-none">
           <ul className="menu menu-horizontal px-1">
