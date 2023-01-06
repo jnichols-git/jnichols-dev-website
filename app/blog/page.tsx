@@ -3,7 +3,9 @@ import Blog from './blog'
 import styles from "../home.module.css"
 
 async function getListings() {
-    const res = await fetch("https://api.jnichols-dev.com/blog/user/listings?page_count=20")
+    const res = await fetch("https://api.jnichols-dev.com/blog/user/listings?page_count=20", {
+        cache: "no-cache"
+    })
     return res.json()
 }
 
