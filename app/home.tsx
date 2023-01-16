@@ -4,6 +4,8 @@ import styles from './home.module.css'
 
 import { KeyedContent } from './components';
 
+import Image from 'next/image'
+
 import {useState} from 'react'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -71,7 +73,7 @@ export default function Home() {
     <>
       <div className="hero min-h-screen">
         <div className="hero-content flex-col lg:flex-row-reverse">
-          <img src="https://placeimg.com/260/400/arch" className="max-w-sm rounded-lg shadow-2xl" />
+          <Image src="/headshot.jpg" alt="picture" width="300" height="500" className="max-w-sm rounded-lg shadow-2xl" />
           <div>
             <About/>
           </div>
