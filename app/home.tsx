@@ -2,7 +2,7 @@
 import { Inter } from '@next/font/google'
 import styles from './home.module.css'
 
-import { KeyedContent } from './components';
+import { KeyedContent, TimedGallery, ImageSetDesc} from './components';
 
 import Image from 'next/image'
 
@@ -67,13 +67,33 @@ function About() {
   )
 }
 
-export default function Home() {
+function GalleryDesc (): ImageSetDesc  {
+  return {
+    srcs: [
+      {
+        url: "/headshot.jpg",
+        alt: "Professional headshot",
+      },
+      {
+        url: "/sko.jpg",
+        alt: "Sko buffs!",
+      },
+      {
+        url: "/spain.jpg",
+        alt: "More casual vacation picture",
+      }
+    ],
+    fixedWidth: 300,
+    fixedHeight: 500,
+  }
+}
 
+export default function Home() {
   return (
     <>
       <div className="hero min-h-screen">
-        <div className="hero-content flex-col lg:flex-row-reverse">
-          <Image src="/headshot.jpg" alt="picture" width="300" height="500" className="max-w-sm rounded-lg shadow-2xl" />
+        <div className="hero-content px-5 flex-col-reverse lg:flex-row-reverse">
+          <TimedGallery desc={GalleryDesc()} interval={10000}/>
           <div>
             <About/>
           </div>
