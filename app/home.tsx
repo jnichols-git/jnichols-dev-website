@@ -93,7 +93,7 @@ export default function Home() {
     <>
       <div className="hero min-h-screen">
         <div className="hero-content px-5 flex-col-reverse lg:flex-row-reverse">
-          <TimedGallery desc={GalleryDesc()} interval={10000}/>
+          <TimedGallery desc={GalleryDesc()} interval={25000}/>
           <div>
             <About/>
           </div>
