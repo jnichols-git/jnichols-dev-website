@@ -91,8 +91,8 @@ function GalleryDesc (): ImageSetDesc  {
 export default function Home() {
   return (
     <>
-      <div className="hero min-h-screen">
-        <div className="hero-content px-5 flex-col-reverse lg:flex-row-reverse">
+      <div className="hero text-center lg:min-h-screen lg:text-left">
+        <div className="hero-content mx-5 flex-col-reverse justify-center lg:flex-row-reverse">
           <TimedGallery desc={GalleryDesc()} interval={25000}/>
           <div>
             <About/>

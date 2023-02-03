@@ -77,7 +77,7 @@ export default function Blog(
 ) {
   return (
     <>
-        <div className="container w-10/12 flex flex-col justify-center">
+        <div className="mx-5 container flex flex-col justify-center">
           <div className="flex flex-col justify-center">
             <h1 className="text-5xl font-bold text-center">Blog</h1>
             <p className="py-6 text-center">I write blog posts about projects, my pets, tech news, and anything else that comes to mind. If you want to know more about me as a consultant, engineer, etc., this is the place! Working on the blog backend is an ongoing project for me--you'll see this page change quite a bit over time as I add and change features.</p>
