@@ -16,8 +16,6 @@ async function getListings() {
 export default async function Page() {
     const listings = await getListings()
     return (
-        <div className="w-full lg:w-10/12 flex justify-center">
-            <Blog listings={listings}/>
-        </div>
+        <Blog listings={listings}/>
     )
 }
