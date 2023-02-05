@@ -1,3 +1,5 @@
+import { classText } from "../../style/text"
+
 function NavMenu() {
     return (
       <>
@@ -35,7 +37,7 @@ export function Footer() {
                 <div className="tooltip tooltip-primary" data-tip="View Resume">
                     <a href="/Resume.pdf"><img src="/resume.svg" alt="View Resume" width="24" height="24"/></a>
                 </div>
-                <p>Mastodon coming soon!</p>
+                <p className={classText()}>Mastodon coming soon!</p>
             </div>
         </footer>
     )

@@ -11,6 +11,8 @@ import { CardGridContent } from '../components';
 import {useState} from 'react'
 import ResponsiveGrid from '../components/layout/grid';
 
+import { classHeader, classText } from '../style/text';
+
 type BlogListing = {
     post_id: string,
     live_version_id: string,
@@ -35,8 +37,8 @@ function tags_badges(arg0 : any) {
 }
 
 function timestamps_display(arg0 : number, arg1 : number) {
-  const uploaded = <p><i>Uploaded {new Date(arg0*1000).toLocaleDateString("en-us")}</i></p>
-  const updated = <p><i>Updated {new Date(arg1*1000).toLocaleDateString("en-us")}</i></p>
+  const uploaded = <p className={classText()}><i>Uploaded {new Date(arg0*1000).toLocaleDateString("en-us")}</i></p>
+  const updated = <p className={classText()}><i>Updated {new Date(arg1*1000).toLocaleDateString("en-us")}</i></p>
   if(arg1 < arg0) {
     return (
       <div>{uploaded}</div>
@@ -56,11 +58,11 @@ function listings_cards(arg0 : any) {
         <div key={listing.post_id} className="card w-100% bg-base-200 border-4 border-primary shadow-xl">
             <div className="card-body">
               <>
-                <h2 className="card-title">
+                <h3 className={`card-title ${classHeader(3)}`}>
                   <>{listing.title}</>
-                </h2>
+                </h3>
                 {tags_badges(listing.tags)}
-                <p>
+                <p className={classText()}>
                   {listing.description}
                 </p>
                 {timestamps_display(listing.upload_timestamp, listing.update_timestamp)}
@@ -80,8 +82,8 @@ export default function Blog(
   let cards = listings.map(listings_cards);
   return (
     <>
-        <h1 className="text-5xl font-bold text-center">Blog</h1>
-        <p className="text-center">I write blog posts about projects, my pets, tech news, and anything else that comes to mind. If you want to know more about me as a consultant, engineer, etc., this is the place! Working on the blog backend is an ongoing project for me--you'll see this page change quite a bit over time as I add and change features.</p>
+        <h1 className={`text-center ${classHeader(1)}`}>Blog</h1>
+        <p className={`text-center ${classText()}`}>I write blog posts about projects, my pets, tech news, and anything else that comes to mind. If you want to know more about me as a consultant, engineer, etc., this is the place! Working on the blog backend is an ongoing project for me--you'll see this page change quite a bit over time as I add and change features.</p>
         <ResponsiveGrid>
           {cards}
         </ResponsiveGrid>

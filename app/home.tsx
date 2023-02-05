@@ -7,6 +7,7 @@ import { KeyedContent, TimedGallery, ImageSetDesc} from './components';
 import Image from 'next/image'
 
 import {useState} from 'react'
+import { classText } from './style/text';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -14,7 +15,7 @@ function aboutMe() {
   return (
     <>
     <div className="py-6">
-      <p>Hi! I'm a cloud software engineer and consultant out of Colorado, USA. I've been writing software for about 8 years, starting with text-based adventures written in Python and working my way up to where I am today.
+      <p className={classText()}>Hi! I'm a cloud software engineer and consultant out of Colorado, USA. I've been writing software for about 8 years, starting with text-based adventures written in Python and working my way up to where I am today.
       I'm always seeking opportunities to uplift and empower communities through software solutions--currently I've got my eye on the tech used to monitor and care for animals with specific environmental requirements.</p>
     </div>
     </>
@@ -24,8 +25,8 @@ function aboutMe() {
 function aboutSkills() {
   return (
     <>
-    <div className="py-6">
-      <p className="pb-6">My experience in academics, internships, jobs, and personal work has given me a strong skillset for cloud development and consulting. Skills I'm particularly proficient in are <b className="text-accent">highlighted</b>.</p>
+    <div className="py-6 flex flex-col gap-y-6">
+      <p className={classText()}>My experience in academics, internships, jobs, and personal work has given me a strong skillset for cloud development and consulting. Skills I'm particularly proficient in are <b className="text-accent">highlighted</b>.</p>
       <ul className="list-disc">
         <li>Programming Languages: <b className="text-accent">Golang, C/C++, Python</b>, JavaScript, TypeScript, Java, SQL</li>
         <li>Development Tools: <b className="text-accent">Linux/MacOS Environments</b>, GitHub, Docker, Figma </li>
@@ -40,8 +41,8 @@ function aboutSkills() {
 function aboutExperience() {
   return (
     <>
-    <div className="py-6">
-      <p className="pb-6">I've accomplished a lot in my relatively short time as an engineer:</p>
+    <div className="py-6 flex flex-col gap-y-6">
+      <p className={classText()}>I've accomplished a lot in my relatively short time as an engineer:</p>
       <ul className="list-disc">
         <li>Graduating with a 3.5 GPA from the University of Colorado Boulder in 2023</li>
         <li>Game Development Intern and Cloud Engineer at Virga Inc. in Denver for 1.5 years</li>
@@ -92,7 +93,7 @@ export default function Home() {
   return (
     <>
       <div className="hero text-center lg:min-h-screen lg:text-left">
-        <div className="hero-content mx-5 flex-col-reverse justify-center lg:flex-row-reverse">
+        <div className="hero-content mx-5 flex-col-reverse justify-center lg:flex-row-reverse gap-x-6">
           <TimedGallery desc={GalleryDesc()} interval={25000}/>
           <div>
             <About/>
