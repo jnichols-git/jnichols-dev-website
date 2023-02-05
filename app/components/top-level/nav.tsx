@@ -36,7 +36,7 @@ export function Navbar() {
 
 export function Footer() {
     return (
-        <footer className="footer items-center p-4 bg-neutral text-neutral-content">
+        <footer className="footer items-center p-4 bg-base-300">
             <div className="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
                 <div className="tooltip tooltip-right lg:tooltip-top tooltip-primary" data-tip="View Resume">
                     <a href="/Resume.pdf"><img src="/resume.svg" alt="View Resume" width="24" height="24"/></a>
