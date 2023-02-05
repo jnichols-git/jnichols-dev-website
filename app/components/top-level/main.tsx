@@ -7,7 +7,7 @@ export default function Main(
 ) {
     return (
         <div className="w-screen lg:min-h-screen flex justify-center content-start" id="main-container">
-        <div className="lg:w-10/12 px-5 my-10 flex flex-col justify-center gap-y-10" id="main-spacer">
+        <div className="max-lg:mx-5 lg:w-10/12 my-10 flex flex-col justify-center gap-y-10" id="main-spacer">
             {children}
         </div>
         </div>

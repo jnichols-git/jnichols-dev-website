@@ -2,7 +2,9 @@
 import { Inter } from '@next/font/google'
 import styles from './home.module.css'
 
-import { KeyedContent, TimedGallery, ImageSetDesc} from './components';
+import { TimedGallery, ImageSetDesc } from './components/dynamic/gallery'
+
+import { KeyedContent} from './components';
 
 import Image from 'next/image'
 
@@ -93,7 +95,7 @@ export default function Home() {
   return (
     <>
       <div className="hero text-center lg:min-h-screen lg:text-left">
-        <div className="hero-content mx-5 flex-col-reverse justify-center lg:flex-row-reverse gap-x-6">
+        <div className="hero-content flex-col-reverse justify-center lg:flex-row-reverse gap-x-6">
           <TimedGallery desc={GalleryDesc()} interval={25000}/>
           <div>
             <About/>

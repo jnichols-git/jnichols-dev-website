@@ -19,7 +19,7 @@ export function Navbar() {
                     </label>
                 </div>
                 <div className="navbar-center">
-                    <label htmlFor="nav-drawer" className="flex-1 px-2 mx-2 text-3xl font-bold">jnichols.dev</label>
+                    <label htmlFor="nav-drawer" className="flex-1 px-2 mx-2 text-3xl font-bold">jnichols</label>
                 </div>
                 <div className="navbar-end">
                     <div className="flex-none hidden lg:block">
@@ -36,7 +36,7 @@ export function Footer() {
     return (
         <footer className="footer items-center p-4 bg-neutral text-neutral-content">
             <div className="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
-                <div className="tooltip tooltip-primary" data-tip="View Resume">
+                <div className="tooltip tooltip-right lg:tooltip-top tooltip-primary" data-tip="View Resume">
                     <a href="/Resume.pdf"><img src="/resume.svg" alt="View Resume" width="24" height="24"/></a>
                 </div>
                 <p>Mastodon coming soon!</p>
