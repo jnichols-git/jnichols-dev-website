@@ -15,6 +15,7 @@ module.exports = {
       {
         j: {
           ...require("daisyui/src/colors/themes")["[data-theme=business]"],
+          "primary": "#4bbfe3",
           "--rounded-box": "0.5rem",
           "--rounded-badge": "0.5rem",
           "--rounded-btn": "0.5rem"

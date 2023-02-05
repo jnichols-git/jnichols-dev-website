@@ -29,9 +29,9 @@ function tags_badges(arg0 : any) {
   if(tags == null || tags.length == 0) {
     return <br/>
   } else {
-    return <div className="flex flex-row">
+    return <div className="flex flex-row gap-1">
       {tags.map((tag) => {
-        return <div key={tag} className="badge badge-secondary">{tag}</div>
+        return <div key={tag} className="badge badge-primary text-content-primary p-3">{tag}</div>
       })}
     </div>
   }

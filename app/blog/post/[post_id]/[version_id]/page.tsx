@@ -35,7 +35,7 @@ function VersionSelect(
                     if(AvID == vID) {
                         return <li key={AvID}><a className="text-accent">{AvID}</a></li>
                     } else {
-                        return <li key={AvID}><a href={`/blog/post/${pID}/${AvID}`}>{AvID}</a></li>
+                        return <li key={AvID}><a className="text-neutral-content" href={`/blog/post/${pID}/${AvID}`}>{AvID}</a></li>
                     }
                 })}
             </ul>
