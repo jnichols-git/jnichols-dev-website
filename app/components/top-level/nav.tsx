@@ -11,19 +11,21 @@ function NavMenu() {
 
 export function Navbar() {
     return (
-        <div className="sticky top-0 z-30 flex h-16 w-full">
-            <nav className="navbar bg-base-300 w-full">
+        <div className="sticky top-0 z-30 flex justify-center bg-base-300 h-16 w-full">
+            <nav className="navbar w-full lg:w-10/12">
                 <div className="navbar-start">
-                    <label htmlFor="nav-drawer" className="btn btn-square btn-ghost hover:btn-neutral">
+                    <label htmlFor="nav-drawer" className="flex-1 px-2 mx-2 text-3xl font-bold hidden lg:block">jnichols</label>
+                    <label htmlFor="nav-drawer" className="btn btn-square btn-ghost hover:btn-neutral lg:hidden">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block w-6 h-6 stroke-current"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
                     </label>
                 </div>
                 <div className="navbar-center">
-                    <label htmlFor="nav-drawer" className="flex-1 px-2 mx-2 text-3xl font-bold">jnichols</label>
+                    <label htmlFor="nav-drawer" className="flex-1 px-2 mx-2 text-3xl font-bold lg:hidden">jnichols</label>
                 </div>
                 <div className="navbar-end">
                     <div className="flex-none hidden lg:block">
                         <ul className="menu menu-horizontal">
+                            <NavMenu/>
                         </ul>
                     </div>
                 </div>
