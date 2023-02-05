@@ -4,6 +4,7 @@ import { themeChange } from 'theme-change'
 
 import { DrawerWrapper, Footer, Navbar } from './components/top-level/nav'
 import Main from './components/top-level/main'
+import Body from './components/top-level/body'
 
 
 export default function RootLayout(
@@ -11,7 +12,7 @@ export default function RootLayout(
 ) {
   return (
     <html lang="en">
-      <body data-theme="dark">
+      <Body>
         {/*begin content*/}
         {/*drawer container*/}
         <DrawerWrapper>
@@ -22,7 +23,7 @@ export default function RootLayout(
           <Footer/>
         </DrawerWrapper>
         {/*end content*/}
-      </body>
+      </Body>
     </html>
   )
 }

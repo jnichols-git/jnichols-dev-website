@@ -31,7 +31,9 @@ function tags_badges(arg0 : any) {
   } else {
     return <div className="flex flex-row gap-1">
       {tags.map((tag) => {
-        return <div key={tag} className="badge badge-primary text-content-primary p-3">{tag}</div>
+        return <div key={tag} className="badge badge-primary text-content-primary p-3">
+          <a href={`/blog?tags=${tag}`}>{tag}</a>
+        </div>
       })}
     </div>
   }
@@ -76,18 +78,27 @@ function listings_cards(arg0 : any) {
     )
 }
 
-export default function Blog(
-    {listings}:
-    {listings: any[]}
-) {
-  let cards = listings.map(listings_cards);
+function ph() {
   return (
-    <>
+    <div className="flex justify-center content-center rounded-md"><h3>Fetching listings...</h3></div>
+  )
+}
+
+export default function Blog(
+    {listings, hasFilters}:
+    {listings: Promise<BlogListing[]>, hasFilters: boolean}
+) {
+
+  let [content, setContent] = useState<JSX.Element>(ph());
+  listings.then((ls) => {
+    setContent(<ResponsiveGrid>{ls.map(listings_cards)}</ResponsiveGrid>)
+  });
+  return (
+    <div className="flex flex-col gap-y-10 min-h-screen">
         <h1 className={`text-center`}>Blog</h1>
         <p className={`text-center`}>I write blog posts about projects, my pets, tech news, and anything else that comes to mind. If you want to know more about me as a consultant, engineer, etc., this is the place! Working on the blog backend is an ongoing project for me--you'll see this page change quite a bit over time as I add and change features.</p>
-        <ResponsiveGrid>
-          {cards}
-        </ResponsiveGrid>
-    </>
+        <a className={`btn btn-primary ${hasFilters?'':'hidden'}`} href='/blog'>Clear Filters</a>
+        {content}
+    </div>
   )
 }
