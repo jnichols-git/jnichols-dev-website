@@ -2,14 +2,12 @@
 import { Inter } from '@next/font/google'
 import styles from './home.module.css'
 
-import { TimedGallery, ImageSetDesc } from './components/dynamic/gallery'
+import { ImageSetDesc, TimedGallery } from './components/dynamic/gallery'
+
+import withTimer from './components/compose/timer'
 
 import { KeyedContent} from './components';
 
-import Image from 'next/image'
-
-import {useState} from 'react'
-import { classText } from './style/text';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -96,7 +94,7 @@ export default function Home() {
     <>
       <div className="hero text-center lg:min-h-screen lg:text-left">
         <div className="hero-content flex-col-reverse justify-center lg:flex-row-reverse gap-x-6">
-          <TimedGallery desc={GalleryDesc()} interval={25000}/>
+          <TimedGallery desc={GalleryDesc()} interval={10000}/>
           <div>
             <About/>
           </div>
