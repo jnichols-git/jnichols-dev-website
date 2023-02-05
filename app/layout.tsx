@@ -11,7 +11,7 @@ export default function RootLayout(
 ) {
   return (
     <html lang="en">
-      <body data-theme="j">
+      <body data-theme="dark">
         {/*begin content*/}
         {/*drawer container*/}
         <DrawerWrapper>

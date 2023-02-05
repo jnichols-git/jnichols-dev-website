@@ -15,7 +15,7 @@ function aboutMe() {
   return (
     <>
     <div className="py-6">
-      <p>Hi! I'm a cloud software engineer and consultant out of Colorado, USA. I've been writing software for about 8 years, starting with text-based adventures written in Python and working my way up to where I am today.
+      <p>Hi! I'm Jake, a cloud software engineer and consultant out of Colorado, USA. I've been writing software for about 8 years, starting with text-based adventures written in Python and working my way up to where I am today.
       I'm always seeking opportunities to uplift and empower communities through software solutions--currently I've got my eye on the tech used to monitor and care for animals with specific environmental requirements.</p>
     </div>
     </>

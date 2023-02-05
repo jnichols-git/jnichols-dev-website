@@ -57,7 +57,7 @@ export function KeyedContent(
                         if(mappedKey!=keys[navIndex]) {
                             return(<button key={mappedKey} className="btn" onClick={()=>handleSwap(keys.indexOf(mappedKey))}>{mappedKey}</button>)
                         } else {
-                            return (<button key={mappedKey} className="btn btn-active">{mappedKey}</button>)
+                            return (<button key={mappedKey} className="btn btn-active text-primary-content">{mappedKey}</button>)
                         }
                     })}
                 </div>

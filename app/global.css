@@ -16,7 +16,7 @@
     h4 {
         @apply text-xl;
     }
-    p, a {
+    p, a, li {
         @apply text-lg;
     }
     article {
