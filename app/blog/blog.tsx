@@ -40,39 +40,39 @@ function tags_badges(arg0 : any) {
 }
 
 function timestamps_display(arg0 : number, arg1 : number) {
+  let tT = new Date(Date.now());
+  tT.setDate(tT.getDate()-3);
+  let tUL = new Date(arg0*1000);
+  let tUD = new Date(arg1*1000);
   const uploaded = <p><i>Uploaded {new Date(arg0*1000).toLocaleDateString("en-us")}</i></p>
   const updated = <p><i>Updated {new Date(arg1*1000).toLocaleDateString("en-us")}</i></p>
-  if(arg1 < arg0) {
-    return (
-      <div>{uploaded}</div>
-    )
-  } else {
-    return (
-      <div>{uploaded}{updated}</div>
-    )
-  }
+  return (
+    <div className="indicator">
+      {(tUL>tT || tUD > tT)?<span className="indicator-item badge badge-accent">!</span>:''}
+      <div className="flex flex-col pr-3">
+        {uploaded}
+        {tUD>tUL?updated:''}
+      </div>
+    </div>
+  )
 }
 
 
-function listings_cards(arg0 : any) {
+function listings_cards(arg0 : any, idx : number) {
     const listing = arg0 as BlogListing
     const href = `/blog/post/${listing.post_id}/latest`
     return (
-        <div key={listing.post_id} className="card w-100% bg-base-200 border-4 border-primary shadow-xl">
+        <div key={listing.post_id} className={`card w-100% bg-base-200 border-4 border-primary shadow-xl`}>
             <div className="card-body">
-              <>
-                <h3 className={`card-title`}>
-                  <>{listing.title}</>
-                </h3>
+                <>
+                <h3 className={`card-title`}>{listing.title}</h3>
                 {tags_badges(listing.tags)}
-                <p>
-                  {listing.description}
-                </p>
+                <p>{listing.description}</p>
                 {timestamps_display(listing.upload_timestamp, listing.update_timestamp)}
                 <div className="card-actions justify-end">
                 <a className="btn btn-primary" href={href}>Read</a>
                 </div>
-              </>
+                </>
             </div>
         </div>
     )

@@ -4,7 +4,7 @@
 export default function ResponsiveGrid(
     {children, fade}: {children: React.ReactNode, fade?:boolean}
 ) {
-    let gridClass = `grid grid-cols-1 gap-4 lg:grid-flow-col auto-cols-fr ${fade?'transition-all duration-1000 opacity-100':''}`
+    let gridClass = `grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 ${fade?'transition-all duration-1000 opacity-100':''}`
     return (
         <div className={`${gridClass}`}>
             {children}
