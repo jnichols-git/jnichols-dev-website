@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react"
 import Image from 'next/image'
 import styles from './home.module.css'
+import { classHeader } from "./style/text"
 
 export function CardGridContent(
     {contents, conv}:
@@ -46,7 +47,7 @@ export function KeyedContent(
         <div className="flex flex-col justify-center lg:justify-start">
             <div className={`transition-all duration-1000 ${fade ? "opacity-100" : "opacity-0"}`}>
                 <>
-                    <h1 className="text-5xl font-bold">{key}</h1>
+                    <h1>{key}</h1>
                     {content}
                 </>
             </div>
@@ -61,85 +62,6 @@ export function KeyedContent(
                     })}
                 </div>
             </div>
-        </div>
-    )
-}
-
-export type ImageDesc = {
-    url: string;
-    alt: string;
-}
-
-export type ImageSetDesc = {
-    srcs: ImageDesc[]
-    fixedWidth: number
-    fixedHeight: number
-}
-
-function imageFrom(desc : ImageSetDesc, idx : number, extra : Partial<any> | undefined = undefined) {
-    if(idx >= desc.srcs.length) {
-        throw "out of range";
-    }
-    let src = desc.srcs[idx];
-    let img = <Image src={src.url} alt={src.alt} key={src.url} width={desc.fixedWidth} height={desc.fixedHeight} placeholder='empty'/>
-    if(extra != undefined) {
-        img = React.cloneElement(img, extra);
-    }
-    return img;
-}
-
-
-export function TimedGallery(
-    {desc, interval}:
-    {desc: ImageSetDesc, interval: number}
-): JSX.Element {
-    // current image handling
-    const [idx, setIdx] = useState(0)
-    const incrementIdx = () => {
-        setIdx((prev)=>{
-            if(prev+1 >= desc.srcs.length) {
-                return 0;
-            } else {
-                return prev+1;
-            }
-        })
-    }
-    // fade handling
-    const [fadeIn, setFadeIn] = useState(true);
-    // fadeExpr must be duration-${fadeTime*2}. Not all classes are included in duration, be sure to check docs if changing.
-    const fadeExpr = 'duration-1000'
-    const fadeTime = 1000;
-
-    // swap handler; fade out for fadeTime, then swap the url in place and fade back in for fadeTime
-    // pass through if desc is a single image
-    const swap = () => {
-        if(desc.srcs.length <= 1) {
-            return;
-        }
-        setFadeIn(false);
-        setTimeout(()=>{
-            incrementIdx();
-            setTimeout(()=>{
-                setFadeIn(true);
-            }, 300);
-        }, fadeTime);
-    }
-    useEffect(()=>{
-        // Swap on interval
-        const timer = setInterval(()=>{
-            swap();
-        }, interval)
-        return () => clearInterval(timer)
-    }, [])
-
-    let img = imageFrom(desc, idx, {className:`transition-all ${fadeExpr} ${fadeIn ? "opacity-100" : "opacity-0"}`})
-    // element
-    return (
-        <div style={{
-            minWidth: desc.fixedWidth,
-            height: desc.fixedHeight,
-        }}>
-            {img}
         </div>
     )
 }
