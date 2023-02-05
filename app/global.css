@@ -2,3 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 @tailwind typography;
+
+@layer base {
+    h1 {
+        @apply text-4xl font-bold;
+    }
+    h2 {
+        @apply text-3xl font-bold;
+    }
+    h3 {
+        @apply text-2xl font-bold;
+    }
+    h4 {
+        @apply text-xl;
+    }
+    p, a {
+        @apply text-lg;
+    }
+    article {
+        @apply py-10 mx-6 prose prose-sm max-w-none lg:prose-xl lg:max-w-prose;
+    }
+}

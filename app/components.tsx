@@ -47,7 +47,7 @@ export function KeyedContent(
         <div className="flex flex-col justify-center lg:justify-start">
             <div className={`transition-all duration-1000 ${fade ? "opacity-100" : "opacity-0"}`}>
                 <>
-                    <h1 className={classHeader(1)}>{key}</h1>
+                    <h1>{key}</h1>
                     {content}
                 </>
             </div>
