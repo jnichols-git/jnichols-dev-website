@@ -13,9 +13,10 @@ import ResponsiveGrid from '../components/layout/grid';
 
 import { classHeader, classText } from '../style/text';
 
-type BlogListing = {
+export type BlogListing = {
     post_id: string,
     live_version_id: string,
+    archive_version_ids: string[],
     upload_timestamp: number,
     update_timestamp: number,
     title: string,
@@ -53,7 +54,7 @@ function timestamps_display(arg0 : number, arg1 : number) {
 
 function listings_cards(arg0 : any) {
     const listing = arg0 as BlogListing
-    const href = `/blog/post/${listing.post_id}/${listing.live_version_id}`
+    const href = `/blog/post/${listing.post_id}/latest`
     return (
         <div key={listing.post_id} className="card w-100% bg-base-200 border-4 border-primary shadow-xl">
             <div className="card-body">
