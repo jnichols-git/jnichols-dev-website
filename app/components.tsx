@@ -52,7 +52,7 @@ export function KeyedContent(
                 </>
             </div>
             <div className="flex justify-center lg:justify-start">
-                <div className="btn-group border border-4 border-primary rounded-lg">
+                <div className="btn-group">
                     {keys.map((mappedKey)=>{
                         if(mappedKey!=keys[navIndex]) {
                             return(<button key={mappedKey} className="btn btn-ghost" onClick={()=>handleSwap(keys.indexOf(mappedKey))}>{mappedKey}</button>)
