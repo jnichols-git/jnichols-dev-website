@@ -36,12 +36,17 @@ export function Navbar() {
 
 export function Footer() {
     return (
-        <footer className="footer items-center p-4 bg-base-300">
+        <footer className="footer flex justify-center p-4 bg-base-300">
             <div className="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
-                <div className="tooltip tooltip-right lg:tooltip-top tooltip-primary" data-tip="View Resume">
-                    <a href="/Resume.pdf"><img src="/resume.svg" alt="View Resume" width="24" height="24"/></a>
-                </div>
-                <p>Mastodon coming soon!</p>
+                <a className="flex flex-row gap-x-2" href="/Resume.pdf">
+                    <img src="/resume.svg" alt="View Resume" width="24" height="24"/>
+                    Resume
+                </a>
+                <div className="divider divider-horizontal"></div>
+                <a className="flex flex-row gap-x-2" href="/Resume.pdf">
+                    <img src="/github-mark.svg" alt="View Resume" width="24" height="24"/>
+                    GitHub
+                </a>
             </div>
         </footer>
     )
