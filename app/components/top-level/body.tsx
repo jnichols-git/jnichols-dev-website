@@ -4,7 +4,7 @@ export default function Body(
     {children}: {children: React.ReactNode}
 ) {
     return (
-        <body data-theme="light">
+        <body data-theme="lofi">
             {children}
         </body>
     )

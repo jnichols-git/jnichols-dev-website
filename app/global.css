@@ -20,6 +20,6 @@
         @apply text-lg;
     }
     article {
-        @apply py-10 mx-6 prose prose-sm max-w-none lg:prose-xl lg:max-w-prose prose-a:link prose-a:link-primary prose-a:link-hover;
+        @apply py-10 mx-8 prose prose-sm max-w-none lg:prose-xl lg:max-w-prose prose-a:link prose-a:link-primary prose-a:link-hover;
     }
 }

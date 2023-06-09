@@ -36,14 +36,16 @@ module.exports = {
           "warning": "#FBBD23",
           "error": "#F87272",
         },
+        lofi: {
+          ...require("daisyui/src/colors/themes")["[data-theme=lofi]"]
+        },
         j: {
           ...require("daisyui/src/colors/themes")["[data-theme=business]"],
-          "primary": "#4bbfe3",
           "--rounded-box": "0.5rem",
           "--rounded-badge": "0.5rem",
           "--rounded-btn": "0.5rem"
-        }
-      }
+        },
+      },
     ],
   },
 }

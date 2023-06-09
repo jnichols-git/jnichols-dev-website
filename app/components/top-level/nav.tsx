@@ -16,7 +16,7 @@ export function Navbar() {
                 <div className="navbar-start">
                     <label htmlFor="nav-drawer" className="flex-1 px-2 mx-2 text-3xl font-bold hidden lg:block">jnichols</label>
                     <label htmlFor="nav-drawer" className="btn btn-square btn-ghost hover:btn-neutral lg:hidden">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block w-6 h-6 stroke-current"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block w-8 h-8 stroke-current"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
                     </label>
                 </div>
                 <div className="navbar-center">
@@ -43,8 +43,8 @@ export function Footer() {
                     Resume
                 </a>
                 <div className="divider divider-horizontal"></div>
-                <a className="flex flex-row gap-x-2" href="/Resume.pdf">
-                    <img src="/github-mark.svg" alt="View Resume" width="24" height="24"/>
+                <a className="flex flex-row gap-x-2" href="https://github.com/jakenichols2719">
+                    <img src="/github-mark.svg" alt="Go to GitHub" width="24" height="24"/>
                     GitHub
                 </a>
             </div>
