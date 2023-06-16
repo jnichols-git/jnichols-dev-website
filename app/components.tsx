@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react"
+import React, {useEffect, useState, useRef} from "react"
 import Image from 'next/image'
 import styles from './home.module.css'
 import { classHeader } from "./style/text"
@@ -44,8 +44,8 @@ export function KeyedContent(
     }
 
     return (
-        <div className="flex flex-col justify-center lg:justify-start">
-            <div className={`transition-all duration-1000 ${fade ? "opacity-100" : "opacity-0"}`}>
+        <div className="container flex flex-col justify-center lg:justify-start">
+            <div className={`transition-all grow duration-1000 ${fade ? "opacity-100" : "opacity-0"}`}>
                 <>
                     <h1>{key}</h1>
                     {content}
@@ -61,6 +61,19 @@ export function KeyedContent(
                         }
                     })}
                 </div>
+            </div>
+        </div>
+    )
+}
+
+export function Block(
+    {blockClass, contentClass, children}:
+    {blockClass: string, contentClass: string, children: React.ReactNode | React.ReactNode[]}
+) {
+    return (
+        <div className={"hero flex text-center lg:text-left px-8 pt-4 " + blockClass}>
+            <div className={"hero-content grow flex-col justify-center items-center lg:flex-row gap-x-8 " + contentClass}>
+                {children}
             </div>
         </div>
     )

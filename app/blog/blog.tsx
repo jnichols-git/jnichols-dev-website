@@ -31,7 +31,7 @@ function tags_badges(arg0 : any) {
   } else {
     return <div className="flex flex-row gap-1">
       {tags.map((tag) => {
-        return <div key={tag} className="badge badge-primary text-content-primary p-3">
+        return <div key={tag} className="badge badge-primary p-3">
           <a href={`/blog?tags=${tag}`}>{tag}</a>
         </div>
       })}
@@ -62,7 +62,7 @@ function listings_cards(arg0 : any, idx : number) {
     const listing = arg0 as BlogListing
     const href = `/blog/post/${listing.post_id}/latest`
     return (
-        <div key={listing.post_id} className={`card w-100% bg-base-200 border-4 border-primary shadow-xl`}>
+        <div key={listing.post_id} className={`card w-100% bg-base-200 border-4 border-primary drop-shadow-2xl`}>
             <div className="card-body">
                 <>
                 <h3 className={`card-title`}>{listing.title}</h3>

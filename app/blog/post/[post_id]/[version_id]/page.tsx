@@ -10,12 +10,12 @@ import { BlogListing } from "../../../blog";
 import BlogPost from "./post"
 
 async function getListing(post_id: string) {
-    const res = await fetch(`https://api.jnichols-dev.com/blog/user/listing?post_id=${post_id}`)
+    const res = await fetch(`https://api.jnichols.info/blog/user/listing?post_id=${post_id}`)
     return res.json()
 }
 
 async function getPost(post_id: string, version_id: string) {
-    const res = await fetch(`https://api.jnichols-dev.com/blog/user/post?post_id=${post_id}&version_id=${version_id}`)
+    const res = await fetch(`https://api.jnichols.info/blog/user/post?post_id=${post_id}&version_id=${version_id}`)
     return res.json()
 }
 

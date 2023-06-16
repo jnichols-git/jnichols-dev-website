@@ -3,8 +3,8 @@ import { classText } from "../../style/text"
 function NavMenu() {
     return (
       <>
-        <li><a href="/">Home</a></li>
-        <li><a href="/blog">Blog</a></li>
+        <li><a className="btn btn-ghost font-sans" href="/">Home</a></li>
+        <li><a className="btn btn-ghost font-sans" href="/blog">Blog</a></li>
       </>
     )
 }

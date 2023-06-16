@@ -7,7 +7,7 @@ import { useSearchParams } from 'next/navigation';
 export const revalidate = 30
 
 async function getListings(params: string) {
-    const res = await fetch(`https://api.jnichols-dev.com/blog/user/listings?page_count=20${params}`, {
+    const res = await fetch(`https://api.jnichols.info/blog/user/listings?page_count=20${params}`, {
         next: {
             revalidate: revalidate,
         }

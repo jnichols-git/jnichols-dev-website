@@ -37,7 +37,8 @@ module.exports = {
           "error": "#F87272",
         },
         lofi: {
-          ...require("daisyui/src/colors/themes")["[data-theme=lofi]"]
+          ...require("daisyui/src/colors/themes")["[data-theme=lofi]"],
+          "base-100": "#FFFFFD",
         },
         j: {
           ...require("daisyui/src/colors/themes")["[data-theme=business]"],

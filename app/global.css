@@ -1,23 +1,26 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 @tailwind typography;
 
 @layer base {
     h1 {
-        @apply text-4xl font-bold;
+        @apply text-4xl font-bold font-serif;
     }
     h2 {
-        @apply text-3xl font-bold;
+        @apply text-3xl font-bold font-serif;
     }
     h3 {
-        @apply text-2xl font-bold;
+        @apply text-2xl font-bold font-serif;
     }
     h4 {
-        @apply text-xl;
+        @apply text-xl font-serif;
     }
     p, a, li {
-        @apply text-lg;
+        @apply text-lg font-serif;
     }
     article {
         @apply py-10 mx-8 prose prose-sm max-w-none lg:prose-xl lg:max-w-prose prose-a:link prose-a:link-primary prose-a:link-hover;
